@@ -8,9 +8,11 @@ class BusinessCardForm extends Component{
     constructor(props){
         super(props);
         this.state={
-        modal: false,
+            newCardContent: '',
+            modal: false,
         };
 
+        this.handleUserInput = this.handleUserInput.bind(this);
         this.toggle = this.toggle.bind(this);
     }
 
@@ -20,16 +22,38 @@ class BusinessCardForm extends Component{
         }));
       }
 
+    handleUserInput(e){
+        this.setState({
+            newCardContent: e.target.value,
+        })
+    }
+
     render(props){
         return(
             <div>
-                <Button outline block={true} color="primary" onClick={this.toggle}>+</Button>
+                <Button block={true} color="primary" className="formButton" onClick={this.toggle}>+</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Add a new business card</ModalHeader>
                     <ModalBody>
                     <FormGroup>
-                    <Label for="exampleEmail">Email</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="Enter email here" />
+                    <Label for="name">Name:</Label>
+                    <Input type="text"
+                           id="name" 
+                           placeholder="Enter name here"
+                           value={this.state.newCardContent}
+                           onChange={this.handleUserInput} />
+                    <Label for="email">Email:</Label>
+                    <Input type="email"
+                           id="email" 
+                           placeholder="Enter email here"
+                           value={this.state.newCardContent}
+                           onChange={this.handleUserInput} />
+                    <Label for="telephone">Phone Number:</Label>
+                    <Input type="tel" 
+                           id="telephone" 
+                           placeholder="Enter phone number here"
+                           value={this.state.newCardContent}
+                           onChange={this.handleUserInput} />
                     <Button color="primary" className="mt-2" onClick={this.toggle}>Add Card</Button>{' '}
                     <Button color="secondary" className="mt-2" onClick={this.toggle}>Cancel</Button>
                     </FormGroup>

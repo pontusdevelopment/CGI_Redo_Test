@@ -1,3 +1,5 @@
-div{
+/* TODO: Fix height on button */
+
+.formButton{
     height: 100%;
 }
