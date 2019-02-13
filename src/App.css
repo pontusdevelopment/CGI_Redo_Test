@@ -1,33 +1,62 @@
-.App {
+div .container{
+  background-color: rgb(217, 217, 252);
+  min-height: 100vh;
+  padding: 0;
+}
+
+.header{
+  height: 90px;
+  text-align: center;
+  font-size: 2.5em;
+  padding-top: 10px;
+  color: white;
+  background-color: rgba(172, 172, 172, 0.1);
+}
+
+.header span{
+  color: red;
+}
+
+.cardBody{
+  height: 100vh;
+  padding-top: 20px;
+  width: 75%;
+  margin: auto;
+  background-color: #fff;
+}
+.controlPanel{
+  background-color: white;
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+.controlPanel .controlButton{
+  margin: auto;
+}
+
+.card{
+  max-width: 300px;
+  margin: auto;
+}
+
+.test{
+  font-size: 40px;
+  margin-top: 10px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.footer{
+  background-color: white;
+  height: 150px;
+  width: 75%;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer button{
+  height: 100%;
+  font-size: 5rem;
+  border-width: 2px;
+  border-radius: 0;
 }
