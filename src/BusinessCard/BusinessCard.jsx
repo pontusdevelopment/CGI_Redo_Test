@@ -18,7 +18,7 @@ class BusinessCard extends Component{
                 <h2 classname="fullName">Name: {this.name} {this.surName}</h2>
                 <p className="telephone">Telephone: {this.telephone}</p>
                 <p className="email">Email: {this.email}</p>
-                {/* <img classname="image">{this.img}</img>*/}
+                {/*TODO - add img to card <img classname="image">{this.img}</img>*/}
             </div>
         )
     }

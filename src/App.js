@@ -4,22 +4,26 @@ import BusinessCardForm from './BusinessCardForm/BusinessCardForm';
 import { Button, Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
 import './App.css';
+import DB_CONFIG from './Config/config';
 
+//TODO #1: Learn more React and make this work as intended!
 
 class App extends Component {
 
   constructor(props){
     super(props);
-
+    // TODO: Generate cards from Firebase instead of hard coded
     this.state ={
-      cards: [
-        {id: 1, name: "Pontus", surName: "Gavelin", telephone: "7070707", email: "pontus@asd", img: "https://novare.se/wp-content/uploads/2017/04/blank-profile-picture-973460_960_720.png" },
-        {id: 2, name: "John", surName: "Doe", telephone: "132123123", email: "John@doe", img: "https://novare.se/wp-content/uploads/2017/04/blank-profile-picture-973460_960_720.png"},
-      ],
+      cards: [{
+        id: 1, name: "Pontus", surName: "Gavelin", telephone: "0733295577", email: "pontusdevelopment@gmail.com"
+      },
+    {
+      id: 2, name: "John", surName: "Doe", telephone: "213123", email: "john@doe.doedoe"
+    }],
     };
     
   }
-
+//TODO: Add update and delete from Firebase to cards
   
 
   render() {
@@ -47,11 +51,10 @@ class App extends Component {
 
 export default App;
 
+//Remnants of tests, keeping them here for future reference for now
+//TODO: See if anything is relevant - else, delete
 
-{/* 
-  Stuff that's commented out for now
-
-  <div className="controlPanel">
+{/* <div className="controlPanel">
             <Button color="primary" className="controlButton">Add New Card</Button>
             <Button color="primary" className="controlButton">Show All Cards</Button>
             <Button color="primary" className="controlButton">Edit Card By Id</Button>

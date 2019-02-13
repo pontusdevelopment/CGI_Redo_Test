@@ -1,5 +1,5 @@
 div .container{
-  background-color: rgb(217, 217, 252);
+  background-color: #FCFCFC;
   min-height: 100vh;
   padding: 0;
 }
@@ -9,8 +9,9 @@ div .container{
   text-align: center;
   font-size: 2.5em;
   padding-top: 10px;
-  color: white;
-  background-color: rgba(172, 172, 172, 0.1);
+  color: #333;
+  background-color: #ECECEC;
+  border-bottom: 5px solid rgb(255, 86, 86);
 }
 
 .header span{

@@ -8,11 +8,14 @@ class BusinessCardForm extends Component{
     constructor(props){
         super(props);
         this.state={
-            newCardContent: '',
+            newNameContent: '',
+            newEmailContent: '',
+            newNumberContent: '',
             modal: false,
         };
-
-        this.handleUserInput = this.handleUserInput.bind(this);
+        this.handleNameInput = this.handleNameInput.bind(this);
+        this.handleEmailInput = this.handleEmailInput.bind(this);
+        this.handleNumberInput = this.handleNumberInput.bind(this);
         this.toggle = this.toggle.bind(this);
     }
 
@@ -22,9 +25,33 @@ class BusinessCardForm extends Component{
         }));
       }
 
-    handleUserInput(e){
+    handleNameInput(e){
         this.setState({
-            newCardContent: e.target.value,
+            newNameContent: e.target.value,
+        })
+    }
+    handleEmailInput(e){
+        this.setState({
+            newEmailContent: e.target.value,
+        })
+    }
+    //TODO: This doesn't take any input - find out why and fix it
+    handleNumberInput(e){
+        this.setState({
+            newNumberContent: e.target.value,
+        })
+    }
+    //TODO: Find out why app crashes on addCard()
+    //      Refactor this code and make it more DRY
+    addCard(){
+        let {newNameContent} = this.state;
+        let {newEmailContent} = this.state;
+        let {newNumberContent} = this.state;
+        this.setState({
+            newNameContent,
+            newEmailContent,
+            newNumberContent,
+            modal: false,
         })
     }
 
@@ -40,23 +67,27 @@ class BusinessCardForm extends Component{
                     <Input type="text"
                            id="name" 
                            placeholder="Enter name here"
-                           value={this.state.newCardContent}
-                           onChange={this.handleUserInput} />
+                           value={this.state.newNameContent}
+                           onChange={this.handleNameInput} />
+                    </FormGroup>
+                    <FormGroup>
                     <Label for="email">Email:</Label>
                     <Input type="email"
                            id="email" 
                            placeholder="Enter email here"
-                           value={this.state.newCardContent}
-                           onChange={this.handleUserInput} />
+                           value={this.state.newEmailContent}
+                           onChange={this.handleEmailInput} />
+                    </FormGroup>
+                    <FormGroup>
                     <Label for="telephone">Phone Number:</Label>
                     <Input type="tel" 
                            id="telephone" 
                            placeholder="Enter phone number here"
-                           value={this.state.newCardContent}
-                           onChange={this.handleUserInput} />
-                    <Button color="primary" className="mt-2" onClick={this.toggle}>Add Card</Button>{' '}
-                    <Button color="secondary" className="mt-2" onClick={this.toggle}>Cancel</Button>
+                           value={this.state.newNumberContent}
+                           onChange={this.handlePhoneInput} />
                     </FormGroup>
+                    <Button color="primary" className="mt-2" onClick={this.addCard}>Add Card</Button>{' '}
+                    <Button color="secondary" className="mt-2" onClick={this.toggle}>Cancel</Button>
                     </ModalBody>
                 </Modal>
             </div>
